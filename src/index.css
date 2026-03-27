@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* 1. LIGHT MODE PALETTE (RGB format) */
+  :root {
+    --color-bg: 248 250 252;         /* #F8FAFC */
+    --color-card-dark: 255 255 255;  /* #FFFFFF */
+    --color-card-light: 226 232 240; /* #E2E8F0 */
+    --color-text-main: 15 23 42;     /* #0F172A */
+    --color-text-muted: 100 116 139; /* #64748B */
+  }
+
+  /* 2. DARK MODE PALETTE (RGB format) */
+  .dark {
+    --color-bg: 6 15 30;             /* #060F1E */
+    --color-card-dark: 13 27 42;     /* #0D1B2A */
+    --color-card-light: 27 38 59;    /* #1B263B */
+    --color-text-main: 248 250 252;  /* #F8FAFC */
+    --color-text-muted: 148 163 184; /* #94A3B8 */
+  }
+
+  body {
+    @apply bg-bgDark text-textMain font-sans antialiased selection:bg-primary selection:text-white transition-colors duration-500;
+  }
+}
+
+/* Custom Glassmorphism Utility */
+.glass-card {
+  @apply bg-cardDark/80 backdrop-blur-md border border-cardLight/50 rounded-2xl shadow-xl transition-colors duration-500;
+}
