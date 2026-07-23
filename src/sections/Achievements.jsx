@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiStar, FiTrendingUp, FiAward, FiTarget, FiActivity, FiLayers, FiCode } from 'react-icons/fi';
-import { SiLeetcode, SiHackerrank, SiMongodb } from 'react-icons/si';
+import { FiStar, FiTrendingUp, FiAward, FiTarget, FiActivity, FiLayers, FiCode, FiBox } from 'react-icons/fi';
+import { SiLeetcode, SiHackerrank } from 'react-icons/si';
 
 const achievementsData = [
   {
@@ -16,7 +16,7 @@ const achievementsData = [
       { label: "Problem Solving", value: "5 Stars", icon: FiStar },
       { label: "Java", value: "5 Stars", icon: FiStar }
     ],
-    description: "Verified 5-star proficiency in Java and algorithmic problem-solving, indicating a strong capability for writing efficient and robust backend code."
+    description: "Verified 5-star proficiency in Java and algorithmic problem-solving. Focused on writing grounded, mature, and real-world backend code for production environments."
   },
   {
     platform: "LeetCode",
@@ -27,24 +27,24 @@ const achievementsData = [
     border: "group-hover:border-yellow-500/50",
     glow: "group-hover:shadow-yellow-500/20",
     stats: [
-      { label: "Total Solved", value: "100+", icon: FiTarget },
+      { label: "Total Solved", value: "180+", icon: FiTarget },
       { label: "Contest Rating", value: "1400+", icon: FiActivity }
     ],
-    description: "Active participant in competitive programming. Consistently tackling complex algorithmic challenges to enhance practical grips on data structures and logic optimization."
+    description: "Maintaining a high-intensity focus on Data Structures and Algorithms (DSA). Consistently tackling complex challenges to enhance logic optimization for scalable systems."
   },
   {
-    platform: "MongoDB",
-    icon: SiMongodb,
-    color: "text-emerald-500",
-    gradient: "from-emerald-500 to-teal-400",
-    bg: "bg-emerald-500/10",
-    border: "group-hover:border-emerald-500/50",
-    glow: "group-hover:shadow-emerald-500/20",
+    platform: "Edge Add-ons Store",
+    icon: FiBox,
+    color: "text-blue-500",
+    gradient: "from-blue-500 to-cyan-400",
+    bg: "bg-blue-500/10",
+    border: "group-hover:border-blue-500/50",
+    glow: "group-hover:shadow-blue-500/20",
     stats: [
-      { label: "Certificates", value: "11+", icon: FiAward },
-      { label: "Focus", value: "NoSQL", icon: FiCode }
+      { label: "Published", value: "Extension", icon: FiCode },
+      { label: "Product", value: "Focus & Feed", icon: FiLayers }
     ],
-    description: "Completed 11+ targeted certifications in MongoDB, building a practical foundation for designing scalable NoSQL database schemas and executing complex queries."
+    description: "Developed and published a real-world productivity extension featuring a custom DOM manipulation engine, a YouTube Shorts blocker, and a task reminder system."
   }
 ];
 
@@ -103,7 +103,7 @@ const Achievements = () => {
               My <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] via-teal-400 to-blue-500">Achievements</span>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-xl mt-4 text-base md:text-lg leading-relaxed font-medium">
-              A track record of consistent problem-solving, algorithmic mastery, and continuous learning across leading developer platforms.
+              A track record of consistent problem-solving, algorithmic mastery, and executing real-world software solutions.
             </p>
           </motion.div>
         </div>
@@ -183,5 +183,3 @@ const Achievements = () => {
 };
 
 export default Achievements;
-
-//done

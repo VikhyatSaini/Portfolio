@@ -111,7 +111,7 @@ const Contact = () => {
             {/* Email Card */}
             <motion.a 
               variants={itemVariants}
-              href="mailto:sainivikhyat045@gmail.com"
+              href="mailto:sainivikhyat2003@gmail.com"
               className="relative bg-white/70 dark:bg-[#1e293b]/50 backdrop-blur-xl border-2 border-gray-100/50 dark:border-white/5 p-6 rounded-3xl flex items-center gap-5 group hover:border-[#10b981]/50 dark:hover:border-[#10b981]/50 transition-all duration-500 shadow-sm hover:shadow-2xl overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#10b981]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
@@ -122,7 +122,7 @@ const Contact = () => {
               </div>
               <div className="relative z-10 overflow-hidden">
                 <span className="text-[10px] md:text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest block mb-1">Email Address</span>
-                <span className="text-sm md:text-base font-extrabold text-gray-900 dark:text-white truncate block group-hover:text-[#10b981] transition-colors">sainivikhyat045@gmail.com</span>
+                <span className="text-sm md:text-base font-extrabold text-gray-900 dark:text-white truncate block group-hover:text-[#10b981] transition-colors">sainivikhyat2003@gmail.com</span>
               </div>
             </motion.a>
 

@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiDownload, FiBookOpen, FiBriefcase, FiAward, FiStar, FiCode, FiTerminal, FiCheckCircle, FiMapPin, FiCpu, FiLayers, FiCalendar } from 'react-icons/fi';
+import { 
+  FiDownload, FiBookOpen, FiAward, FiStar, FiCode, 
+  FiTerminal, FiCheckCircle, FiMapPin, FiCpu, 
+  FiLayers, FiCalendar, FiActivity, FiBox 
+} from 'react-icons/fi';
+
 const tabs = [
   { id: 'Education', icon: <FiBookOpen /> },
   { id: 'Projects', icon: <FiCode /> },
@@ -12,13 +17,21 @@ const tabs = [
 // Helper to map tech stack names to specific brand colors for visual pop
 const getTechColor = (tech) => {
   const t = tech.toLowerCase();
-  if (t.includes("react") || t.includes("jwt")) return "text-cyan-500 bg-cyan-500/10 border-cyan-500/20";
-  if (t.includes("node") || t.includes("spring boot")) return "text-green-500 bg-green-500/10 border-green-500/20";
-  if (t.includes("mongo")) return "text-emerald-500 bg-emerald-500/10 border-emerald-500/20";
-  if (t.includes("python")) return "text-yellow-500 bg-yellow-500/10 border-yellow-500/20";
-  if (t.includes("php") || t.includes("flask")) return "text-indigo-500 bg-indigo-500/10 border-indigo-500/20";
-  if (t.includes("mysql") || t.includes("sql") || t.includes("sqlite") || t.includes("java")) return "text-blue-500 bg-blue-500/10 border-blue-500/20";
-  if (t.includes("gemini") || t.includes("streamlit")) return "text-purple-500 bg-purple-500/10 border-purple-500/20";
+  // Greens
+  if (t.includes("spring boot") || t.includes("node") || t.includes("express") || t.includes("mongo")) return "text-green-500 bg-green-500/10 border-green-500/20";
+  // Blues
+  if (t.includes("react") || t.includes("docker") || t.includes("k3s") || t.includes("kubernetes") || t.includes("c++") || t.includes("sqlite") || t.includes("sql")) return "text-blue-500 bg-blue-500/10 border-blue-500/20";
+  // Reds/Oranges
+  if (t.includes("java") && !t.includes("javascript")) return "text-red-500 bg-red-500/10 border-red-500/20";
+  if (t.includes("maven") || t.includes("jenkins")) return "text-red-600 bg-red-600/10 border-red-600/20";
+  if (t.includes("python") || t.includes("prometheus")) return "text-orange-500 bg-orange-500/10 border-orange-500/20";
+  // Purples
+  if (t.includes("gemini") || t.includes("genai") || t.includes("terraform") || t.includes("multithreading") || t.includes("jwt")) return "text-purple-500 bg-purple-500/10 border-purple-500/20";
+  // Teals/Cyans
+  if (t.includes("nodemailer")) return "text-teal-500 bg-teal-500/10 border-teal-500/20";
+  // Grays/Neutrals
+  if (t.includes("flask") || t.includes("networking")) return "text-gray-800 dark:text-gray-200 bg-gray-500/10 border-gray-500/20";
+  
   return "text-gray-600 dark:text-gray-300 bg-gray-500/10 border-gray-500/20";
 };
 
@@ -51,7 +64,7 @@ const CareerSnapshot = () => {
             {[
               { degree: "B.Tech - Computer Science", school: "Lovely Professional University", location: "Phagwara, Punjab", date: "2023 - Present", score: "CGPA: 7.82", highlight: true },
               { degree: "Intermediate (PCM)", school: "Delhi Public School", location: "Lucknow, UP", date: "2020 - 2021", score: "92.6%", highlight: false },
-              { degree: "Matriculation", school: "Delhi Public School", location: "Lucknow, UP", date: "2018 - 2019", score: "92.4%", highlight: false }
+              { degree: "Matriculation", school: "Delhi Public School", location: "Lucknow, UP", date: "2018 - 2019", score: "92.2%", highlight: false }
             ].map((edu, idx) => (
               <motion.div 
                 key={idx} variants={cardVariants}
@@ -93,9 +106,9 @@ const CareerSnapshot = () => {
         return (
           <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { title: "FedEx-Clone Parcel Delivery", tech: ["Java", "Spring Boot", "React.js"], desc: "Robust parcel delivery backend featuring Spring Security, JWT auth, and optimized JPA queries." },
-              { title: "Volunteer Registration System", tech: ["Node.js", "Express", "MongoDB"], desc: "Automated event registration system with JWT authentication and Nodemailer integrations." },
-              { title: "Virtual Stylist with AI", tech: ["Python", "Flask", "Gemini 2.0"], desc: "AI-powered virtual stylist generating personalized outfit recommendations via user prompts." }
+              { title: "Packet Analyzer & DPI Engine", tech: ["C++", "Multithreading", "Networking"], desc: "Custom packet sniffer parsing L2-L4 headers with a multi-threaded load balancer reducing latency by 40%." },
+              { title: "Virtual Stylist with DevOps", tech: ["Flask", "Terraform", "Docker", "Jenkins"], desc: "Containerized AI styling app deployed on AWS, orchestrated with K3s and Jenkins CI/CD pipelines." },
+              { title: "Volunteer Registration System", tech: ["Node.js", "Express", "MongoDB"], desc: "Automated event registration system with JWT authentication and Nodemailer integrations." }
             ].map((project, idx) => (
               <motion.div 
                 key={idx} variants={cardVariants}
@@ -146,7 +159,7 @@ const CareerSnapshot = () => {
                   </h3>
                   <div className="flex items-center gap-3">
                     <span className="px-3 py-1 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-300 text-[10px] font-black uppercase tracking-widest rounded-lg border border-gray-200 dark:border-white/10">Programming Pathshala</span>
-                    <span className="text-gray-400 dark:text-gray-600 text-xs font-bold uppercase tracking-widest"><FiCalendar className="inline mr-1 mb-0.5" /> August 2025</span>
+                    <span className="text-gray-400 dark:text-gray-600 text-xs font-bold uppercase tracking-widest"><FiCalendar className="inline mr-1 mb-0.5" /> Aug 2025</span>
                   </div>
                 </div>
               </div>
@@ -154,7 +167,7 @@ const CareerSnapshot = () => {
               <div className="relative z-10 pt-6 border-t border-gray-100 dark:border-white/10 bg-gray-50/50 dark:bg-white/5 rounded-2xl p-6 border group-hover:border-[#10b981]/20 transition-colors">
                 <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed font-medium">
                   <strong className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 font-extrabold uppercase tracking-widest text-xs block mb-2">Capstone Project: FedEx-Clone System</strong> 
-                  Engineered a comprehensive suite of RESTful APIs managing delivery core functions. Built with Java, Spring Boot 3.5, and integrated strict JWT/Spring Security RBAC.
+                  Engineered a comprehensive suite of RESTful APIs managing delivery core functions. Built with Java, Spring Boot 3.5, and integrated strict JWT/Spring Security RBAC to handle highly optimized Spring Data JPA queries.
                 </p>
               </div>
             </motion.div>
@@ -165,10 +178,10 @@ const CareerSnapshot = () => {
         return (
           <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="grid grid-cols-1 gap-6">
             {[
-              { title: "Solved 100+ algorithmic problems on LeetCode", icon: FiCode, color: "text-yellow-500" },
+              { title: "Solved 180+ algorithmic problems on LeetCode", icon: FiCode, color: "text-yellow-500" },
               { title: "Secured a 1400+ Contest Rating on LeetCode", icon: FiActivity, color: "text-blue-500" },
               { title: "5-Star Rating in Java & Problem Solving on HackerRank", icon: FiStar, color: "text-emerald-500" },
-              { title: "Earned 11+ MongoDB Skill Certificates", icon: FiAward, color: "text-green-500" }
+              { title: "Published 'Focus & Feed' Productivity Extension on Edge Add-ons", icon: FiBox, color: "text-purple-500" }
             ].map((achievement, idx) => {
               const Icon = achievement.icon;
               return (
@@ -194,9 +207,10 @@ const CareerSnapshot = () => {
         return (
           <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="grid md:grid-cols-2 gap-6">
             {[
-              { title: "Python Certificate", issuer: "HackerRank", color: "text-green-500" },
-              { title: "Java Programming", issuer: "NeoColab", color: "text-yellow-500" },
-              { title: "Cloud Computing", issuer: "NPTEL", color: "text-blue-500" }
+              { title: "Python Certificate", issuer: "HackerRank", date: "Aug '25", color: "text-green-500" },
+              { title: "Java Programming", issuer: "NeoColab", date: "Nov '25", color: "text-yellow-500" },
+              { title: "Cloud Computing", issuer: "NPTEL", date: "July '25", color: "text-blue-500" },
+              { title: "Spring Boot Training", issuer: "Programming Pathshala", date: "Nov '25", color: "text-red-500" }
             ].map((cert, idx) => (
               <motion.div 
                 key={idx} variants={cardVariants}
@@ -210,6 +224,12 @@ const CareerSnapshot = () => {
                 <div className="relative z-10 flex-grow">
                   <h3 className="text-gray-900 dark:text-white font-extrabold text-base md:text-lg group-hover:text-[#10b981] transition-colors leading-tight mb-1">{cert.title}</h3>
                   <p className="text-gray-500 dark:text-gray-400 text-xs font-black uppercase tracking-widest">{cert.issuer}</p>
+                </div>
+                
+                <div className="text-right relative z-10 shrink-0">
+                  <span className="inline-flex items-center justify-center text-[10px] md:text-xs font-black text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-white/5 px-2.5 py-1.5 rounded-lg border border-gray-200 dark:border-white/10 shadow-inner group-hover:bg-[#10b981]/10 group-hover:text-[#10b981] group-hover:border-[#10b981]/20 transition-all duration-300">
+                    <FiCalendar className="mr-1.5" size={12} /> {cert.date}
+                  </span>
                 </div>
               </motion.div>
             ))}
@@ -321,9 +341,4 @@ const CareerSnapshot = () => {
   );
 };
 
-// FiActivity needs to be imported for the achievements tab since it wasn't there before
-import { FiActivity } from 'react-icons/fi';
-
 export default CareerSnapshot;
-
-//done but certificates need adding

@@ -37,14 +37,14 @@ const educationData = [
     school: "Delhi Public School",
     location: "Lucknow, Uttar Pradesh",
     date: "Mar 2018 - May 2019",
-    score: "Percentage: 92.4%",
+    score: "Percentage: 92.2%",
     status: "Completed",
     color: "text-purple-500",
     bg: "bg-purple-500/10",
     border: "border-purple-500/30",
     glow: "group-hover:shadow-purple-500/20",
     gradient: "from-purple-500 to-pink-500",
-    description: "Built a solid academic foundation with excellent performance (92.4%) across all core subjects, sparking an early interest in science, logic, and programming."
+    description: "Built a solid academic foundation with excellent performance (92.2%) across all core subjects, sparking an early interest in science, logic, and programming."
   }
 ];
 

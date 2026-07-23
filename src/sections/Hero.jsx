@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Typewriter } from 'react-simple-typewriter';
-import { FiGithub, FiLinkedin, FiMail, FiBriefcase, FiZap, FiCode, FiArrowRight } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiZap, FiCode, FiArrowRight, FiCloud, FiServer } from 'react-icons/fi';
 import { portfolioData } from '../data/content';
 
 const Hero = () => {
@@ -58,11 +58,11 @@ const Hero = () => {
           {/* Main Headline */}
           <motion.div variants={itemVariants}>
             <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white leading-[1.1] mb-4">
-              Crafting Robust <br />
+              Crafting Scalable <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] via-teal-400 to-blue-500 animate-gradient-x">
-                Backend
+                Backend & Cloud
               </span> <br />
-              Systems & APIs.
+              Infrastructure.
             </h1>
             
             {/* Typewriter Subheading */}
@@ -70,7 +70,7 @@ const Hero = () => {
               <span className="mr-2">I am a</span>
               <span className="text-[#10b981]">
                 <Typewriter
-                  words={['Backend Developer.', 'Java & Spring Boot Expert.', 'B.Tech CSE Student @ LPU.', 'Problem Solver.']}
+                  words={['Full-Stack Developer.', 'DevOps Enthusiast.', 'B.Tech CSE Student @ LPU.', 'Code Autopsy Master.']}
                   loop={0}
                   cursor
                   cursorStyle="_"
@@ -82,7 +82,7 @@ const Hero = () => {
             </div>
 
             <p className="text-base md:text-lg text-gray-500 dark:text-gray-400 max-w-2xl leading-relaxed font-medium">
-              Specializing in designing scalable backend architectures, secure RESTful APIs, and optimized databases. Currently maintaining a 7.82 CGPA while heavily engaged in complex algorithmic problem-solving.
+              Specializing in Backend Development and Cloud/DevOps Engineering. I utilize the 'Code Autopsy' Active Recall method to rapidly deconstruct, master, and implement complex backend architectures, networking protocols, and deployment pipelines.
             </p>
           </motion.div>
           
@@ -107,7 +107,7 @@ const Hero = () => {
           <motion.div variants={containerVariants} className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-gray-200 dark:border-white/10">
             {[
               { label: 'Major Projects', value: '3+' },
-              { label: 'LeetCode Solved', value: '100+' },
+              { label: 'LeetCode Solved', value: '180+' },
               { label: 'CGPA', value: '7.82' },
               { label: 'Certificates', value: '14+' }
             ].map((stat, i) => (
@@ -186,39 +186,39 @@ const Hero = () => {
               </div>
               
               <div className="space-y-6 relative z-10">
-                {/* Highlight 1 */}
+                {/* Highlight 1: Backend */}
                 <motion.div whileHover={{ x: 6 }} transition={{ type: "spring", stiffness: 300 }} className="flex items-start gap-4 group/item cursor-default">
                   <div className="relative w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shadow-sm shrink-0 overflow-hidden">
                     <div className="absolute inset-0 bg-emerald-400/20 translate-y-full group-hover/item:translate-y-0 transition-transform duration-300 ease-out"></div>
-                    <FiCode size={20} className="relative z-10 group-hover/item:scale-110 transition-transform duration-300" />
+                    <FiServer size={20} className="relative z-10 group-hover/item:scale-110 transition-transform duration-300" />
                   </div>
                   <div>
                     <h4 className="text-sm font-extrabold text-gray-900 dark:text-white group-hover/item:text-[#10b981] transition-colors">Backend Architecture</h4>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed font-medium">Delivering secure, optimized APIs using Java Spring Boot, Node.js, and MongoDB.</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed font-medium">Delivering secure, optimized REST APIs using Node.js, Express, and Spring Boot.</p>
                   </div>
                 </motion.div>
 
-                {/* Highlight 2 */}
+                {/* Highlight 2: DevOps & Cloud */}
                 <motion.div whileHover={{ x: 6 }} transition={{ type: "spring", stiffness: 300 }} className="flex items-start gap-4 group/item cursor-default">
                   <div className="relative w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-500/10 border border-blue-100 dark:border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm shrink-0 overflow-hidden">
                     <div className="absolute inset-0 bg-blue-400/20 translate-y-full group-hover/item:translate-y-0 transition-transform duration-300 ease-out"></div>
-                    <FiZap size={20} className="relative z-10 group-hover/item:scale-110 transition-transform duration-300" />
+                    <FiCloud size={20} className="relative z-10 group-hover/item:scale-110 transition-transform duration-300" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-extrabold text-gray-900 dark:text-white group-hover/item:text-blue-500 transition-colors">Algorithmic Mindset</h4>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed font-medium">Strong foundation in Java/C++ with 5-star HackerRank and 1400+ LeetCode ratings.</p>
+                    <h4 className="text-sm font-extrabold text-gray-900 dark:text-white group-hover/item:text-blue-500 transition-colors">Cloud & DevOps</h4>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed font-medium">Containerized environments and CI/CD via Docker, K3s, Terraform, and Jenkins.</p>
                   </div>
                 </motion.div>
 
-                {/* Highlight 3 */}
+                {/* Highlight 3: Algorithmic Mindset */}
                 <motion.div whileHover={{ x: 6 }} transition={{ type: "spring", stiffness: 300 }} className="flex items-start gap-4 group/item cursor-default">
                   <div className="relative w-12 h-12 rounded-2xl bg-purple-50 dark:bg-purple-500/10 border border-purple-100 dark:border-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-400 shadow-sm shrink-0 overflow-hidden">
                     <div className="absolute inset-0 bg-purple-400/20 translate-y-full group-hover/item:translate-y-0 transition-transform duration-300 ease-out"></div>
-                    <FiBriefcase size={20} className="relative z-10 group-hover/item:scale-110 transition-transform duration-300" />
+                    <FiCode size={20} className="relative z-10 group-hover/item:scale-110 transition-transform duration-300" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-extrabold text-gray-900 dark:text-white group-hover/item:text-purple-500 transition-colors">AI & Integrations</h4>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed font-medium">Building practical tools combining Gemini 2.0 with robust application backends.</p>
+                    <h4 className="text-sm font-extrabold text-gray-900 dark:text-white group-hover/item:text-purple-500 transition-colors">Algorithmic Mindset</h4>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed font-medium">C++ Multithreading foundation with 180+ LeetCode solves and a 1400+ rating.</p>
                   </div>
                 </motion.div>
               </div>
@@ -233,5 +233,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-//done

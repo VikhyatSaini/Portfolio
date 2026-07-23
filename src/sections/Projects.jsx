@@ -3,66 +3,70 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiGithub, FiFolder, FiCalendar, FiLayers, FiArrowRight, FiX, FiCode, FiTerminal, FiExternalLink } from 'react-icons/fi';
 
 const projectsData = [
-  
+  {
+    title: "Packet Analyzer & DPI Engine",
+    date: "June 2026",
+    category: "C++ & Networking",
+    shortDesc: "Engineered a custom packet sniffer with a multi-threaded load balancer to parse L2-L4 headers.",
+    techStack: ["C++", "Multithreading", "Networking Protocols"],
+    githubLink: "https://github.com/VikhyatSaini/Packet-Analyzer", 
+    liveLink: null,
+    bullets: [
+      "Engineered a custom packet sniffer using Raw Sockets to parse L2-L4 headers (Ethernet, IP, TCP/UDP).",
+      "Implemented a multi-threaded load balancer to distribute packet processing across worker threads.",
+      "Optimized thread management, achieving a 40% reduction in processing latency."
+    ]
+  },
+  {
+    title: "Virtual Stylist AI with DevOps & Cloud",
+    date: "May 2026",
+    category: "DevOps & Cloud",
+    shortDesc: "Containerized AI styling app deployed on AWS via Terraform, orchestrated with K3s and Jenkins CI/CD.",
+    techStack: ["Flask", "Terraform", "Docker", "K3s", "Jenkins", "Prometheus", "GenAI"],
+    githubLink: "https://github.com/VikhyatSaini/VirtualStylist/tree/main",
+    liveLink: null,
+    bullets: [
+      "Deployed an AI-powered styling application on AWS using Terraform for Infrastructure as Code (IaC).",
+      "Containerized the Flask and SQLite backend with Docker and orchestrated deployments via K3s.",
+      "Established an automated Jenkins CI/CD pipeline integrated with a Prometheus monitoring stack."
+    ]
+  },
   {
     title: "Volunteer Registration System",
     date: "Nov 2025",
     category: "Backend & Node.js",
     shortDesc: "Automated event registration system with JWT authentication and Nodemailer integrations.",
     techStack: ["Node.js", "Express", "MongoDB", "JWT", "Nodemailer"],
-    githubLink: "https://github.com/VikhyatSaini/volunteer-registration-system", 
+    githubLink: "https://github.com/VikhyatSaini/Volunteer-System-V2", 
     liveLink: "https://volunteer-registration-system-rally.vercel.app/",
     bullets: [
       "Eliminated manual email follow-ups by designing an automated notification system using Nodemailer, saving an estimated 40% of administrative work hours per event.",
       "Reduced scheduling conflicts and double-booking errors by 95% through strict Mongoose schema validation enforcing real-time event capacity limits.",
       "Improved volunteer onboarding speed by 300% by replacing manual approval workflows with a secure, self-service JWT authentication system enabling instant profile creation."
     ]
-  },
-  {
-    title: "Virtual Stylist with AI",
-    date: "Apr 2025",
-    category: "AI & Python",
-    shortDesc: "AI-powered virtual stylist generating personalized outfit recommendations via Gemini 2.0.",
-    techStack: ["Python", "Flask", "Gemini 2.0", "SQLite", "SQLAlchemy"],
-    githubLink: "https://github.com/VikhyatSaini/VirtualStylist",
-    liveLink: "https://virtualstylist.onrender.com",
-    bullets: [
-      "Built an AI-powered virtual stylist using Gemini 2.0 and Flask that generates personalized outfit recommendations based on user prompts, preferences, and occasions.",
-      "Enhanced recommendation accuracy and user satisfaction by analyzing outfit preferences and personal styles using GenAI, improving engagement by 50%.",
-      "Implemented a lightweight SQLite + SQLAlchemy backend to store user profiles and past interactions, enabling more accurate personalization and smoother conversational flow."
-    ]
-  },
-  {
-    title: "FedEx-Clone Parcel Delivery System",
-    date: "Aug 2025",
-    category: "Java Spring Boot",
-    shortDesc: "Robust parcel delivery backend featuring Spring Security, JWT auth, and optimized JPA queries.",
-    techStack: ["Java", "Spring Boot", "React.js", "Maven", "REST APIs"],
-    githubLink: "https://github.com/VikhyatSaini/Zeno-Delivery", 
-    bullets: [
-      "Engineered a suite of RESTful APIs handling core functionalities, achieving >99.9% uptime during testing.",
-      "Implemented role-based access control for 3 distinct user roles (customers, drivers, administrators) using Spring Security and JWT.",
-      "Reduced average MySQL query latency by 15% through optimized schema design and Spring Data JPA integrations."
-    ]
   }
 ];
 
-const categories = ["All Projects", "Java Spring Boot", "Backend & Node.js", "AI & Python"];
+const categories = ["All Projects", "C++ & Networking", "DevOps & Cloud", "Backend & Node.js"];
 
 // Helper to map tech stack names to specific brand colors
 const getTechColor = (tech) => {
   const t = tech.toLowerCase();
-  if (t.includes("spring boot")) return "text-green-600 bg-green-500/10 border-green-500/20";
+  // Greens
+  if (t.includes("spring boot") || t.includes("node") || t.includes("express") || t.includes("mongo")) return "text-green-500 bg-green-500/10 border-green-500/20";
+  // Blues
+  if (t.includes("react") || t.includes("docker") || t.includes("k3s") || t.includes("kubernetes") || t.includes("c++") || t.includes("sqlite") || t.includes("sql")) return "text-blue-500 bg-blue-500/10 border-blue-500/20";
+  // Reds/Oranges
   if (t.includes("java") && !t.includes("javascript")) return "text-red-500 bg-red-500/10 border-red-500/20";
-  if (t.includes("react")) return "text-cyan-500 bg-cyan-500/10 border-cyan-500/20";
-  if (t.includes("node") || t.includes("express")) return "text-green-500 bg-green-500/10 border-green-500/20";
-  if (t.includes("mongo")) return "text-emerald-500 bg-emerald-500/10 border-emerald-500/20";
-  if (t.includes("python")) return "text-yellow-500 bg-yellow-500/10 border-yellow-500/20";
-  if (t.includes("flask")) return "text-gray-800 dark:text-gray-200 bg-gray-500/10 border-gray-500/20";
-  if (t.includes("sqlite") || t.includes("sqlalchemy") || t.includes("sql") || t.includes("mysql")) return "text-blue-500 bg-blue-500/10 border-blue-500/20";
-  if (t.includes("gemini")) return "text-purple-500 bg-purple-500/10 border-purple-500/20";
-  if (t.includes("maven")) return "text-red-600 bg-red-600/10 border-red-600/20";
+  if (t.includes("maven") || t.includes("jenkins")) return "text-red-600 bg-red-600/10 border-red-600/20";
+  if (t.includes("python") || t.includes("prometheus")) return "text-orange-500 bg-orange-500/10 border-orange-500/20";
+  // Purples
+  if (t.includes("gemini") || t.includes("genai") || t.includes("terraform") || t.includes("multithreading")) return "text-purple-500 bg-purple-500/10 border-purple-500/20";
+  // Teals/Cyans
   if (t.includes("nodemailer")) return "text-teal-500 bg-teal-500/10 border-teal-500/20";
+  // Grays/Neutrals
+  if (t.includes("flask") || t.includes("networking")) return "text-gray-800 dark:text-gray-200 bg-gray-500/10 border-gray-500/20";
+  
   return "text-gray-600 dark:text-gray-300 bg-gray-500/10 border-gray-500/20"; // Default
 };
 
@@ -341,5 +345,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-//done

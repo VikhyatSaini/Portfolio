@@ -8,9 +8,10 @@ import {
 } from 'react-icons/fa';
 import { 
   SiCplusplus, SiC, SiJavascript, SiExpress, SiSpringboot, SiFlask,
-  SiMysql, SiMongodb, SiSqlite, SiPostman, SiApachemaven, SiJira, SiVercel, SiSelenium
+  SiMysql, SiMongodb, SiSqlite, SiPostman, SiApachemaven, SiVercel,
+  SiKubernetes, SiTerraform, SiJenkins, SiPrometheus
 } from 'react-icons/si';
-import { FiUsers, FiRefreshCw, FiZap, FiCpu } from 'react-icons/fi';
+import { FiServer, FiCloud, FiCode, FiCpu } from 'react-icons/fi';
 
 const skillsData = {
   "Languages": [
@@ -30,23 +31,25 @@ const skillsData = {
     { name: 'Flask', icon: SiFlask, color: 'text-gray-900 dark:text-white', glow: 'shadow-gray-500/50', border: 'group-hover:border-gray-500/50', bg: 'bg-gray-500/10' },
     { name: 'React.js', icon: FaReact, color: 'text-cyan-400', glow: 'shadow-cyan-400/50', border: 'group-hover:border-cyan-400/50', bg: 'bg-cyan-400/10' }
   ],
-  "Tools & Database": [
-    { name: 'MongoDB', icon: SiMongodb, color: 'text-green-500', glow: 'shadow-green-500/50', border: 'group-hover:border-green-500/50', bg: 'bg-green-600/10' },
-    { name: 'MySQL', icon: SiMysql, color: 'text-blue-600 dark:text-blue-400', glow: 'shadow-blue-500/50', border: 'group-hover:border-blue-500/50', bg: 'bg-blue-500/10' },
-    { name: 'SQLite', icon: SiSqlite, color: 'text-sky-500', glow: 'shadow-sky-500/50', border: 'group-hover:border-sky-500/50', bg: 'bg-sky-500/10' },
+  "DevOps & Tools": [
     { name: 'Docker', icon: FaDocker, color: 'text-blue-500', glow: 'shadow-blue-500/50', border: 'group-hover:border-blue-500/50', bg: 'bg-blue-500/10' },
+    { name: 'Kubernetes', icon: SiKubernetes, color: 'text-blue-600', glow: 'shadow-blue-600/50', border: 'group-hover:border-blue-600/50', bg: 'bg-blue-600/10' },
+    { name: 'Terraform', icon: SiTerraform, color: 'text-purple-500', glow: 'shadow-purple-500/50', border: 'group-hover:border-purple-500/50', bg: 'bg-purple-500/10' },
+    { name: 'Jenkins', icon: SiJenkins, color: 'text-red-500', glow: 'shadow-red-500/50', border: 'group-hover:border-red-500/50', bg: 'bg-red-500/10' },
+    { name: 'Prometheus', icon: SiPrometheus, color: 'text-orange-500', glow: 'shadow-orange-500/50', border: 'group-hover:border-orange-500/50', bg: 'bg-orange-500/10' },
     { name: 'Git', icon: FaGitAlt, color: 'text-orange-600', glow: 'shadow-orange-600/50', border: 'group-hover:border-orange-600/50', bg: 'bg-orange-600/10' },
     { name: 'GitHub', icon: FaGithub, color: 'text-gray-900 dark:text-white', glow: 'shadow-gray-500/50', border: 'group-hover:border-gray-500/50', bg: 'bg-gray-500/10' },
     { name: 'Postman', icon: SiPostman, color: 'text-orange-500', glow: 'shadow-orange-500/50', border: 'group-hover:border-orange-500/50', bg: 'bg-orange-500/10' },
     { name: 'Maven', icon: SiApachemaven, color: 'text-red-600', glow: 'shadow-red-600/50', border: 'group-hover:border-red-600/50', bg: 'bg-red-600/10' },
-    { name: 'Jira', icon: SiJira, color: 'text-blue-500', glow: 'shadow-blue-500/50', border: 'group-hover:border-blue-500/50', bg: 'bg-blue-500/10' },
-    { name: 'Vercel', icon: SiVercel, color: 'text-black dark:text-white', glow: 'shadow-gray-400/50', border: 'group-hover:border-gray-400/50', bg: 'bg-gray-500/10' },
-    { name: 'Selenium', icon: SiSelenium, color: 'text-green-400', glow: 'shadow-green-400/50', border: 'group-hover:border-green-400/50', bg: 'bg-green-400/10' }
+    { name: 'Vercel', icon: SiVercel, color: 'text-black dark:text-white', glow: 'shadow-gray-400/50', border: 'group-hover:border-gray-400/50', bg: 'bg-gray-500/10' }
   ],
-  "Soft Skills": [
-    { name: 'Problem-Solving', icon: FiZap, color: 'text-yellow-400', glow: 'shadow-yellow-400/50', border: 'group-hover:border-yellow-400/50', bg: 'bg-yellow-400/10' },
-    { name: 'Team Player', icon: FiUsers, color: 'text-purple-400', glow: 'shadow-purple-400/50', border: 'group-hover:border-purple-400/50', bg: 'bg-purple-500/10' },
-    { name: 'Adaptability', icon: FiRefreshCw, color: 'text-emerald-400', glow: 'shadow-emerald-400/50', border: 'group-hover:border-emerald-400/50', bg: 'bg-emerald-500/10' }
+  "Databases & Core": [
+    { name: 'MongoDB', icon: SiMongodb, color: 'text-green-500', glow: 'shadow-green-500/50', border: 'group-hover:border-green-500/50', bg: 'bg-green-600/10' },
+    { name: 'MySQL', icon: SiMysql, color: 'text-blue-600 dark:text-blue-400', glow: 'shadow-blue-500/50', border: 'group-hover:border-blue-500/50', bg: 'bg-blue-500/10' },
+    { name: 'SQLite', icon: SiSqlite, color: 'text-sky-500', glow: 'shadow-sky-500/50', border: 'group-hover:border-sky-500/50', bg: 'bg-sky-500/10' },
+    { name: 'System Arch', icon: FiServer, color: 'text-purple-400', glow: 'shadow-purple-400/50', border: 'group-hover:border-purple-400/50', bg: 'bg-purple-500/10' },
+    { name: 'Cloud Native', icon: FiCloud, color: 'text-cyan-400', glow: 'shadow-cyan-400/50', border: 'group-hover:border-cyan-400/50', bg: 'bg-cyan-500/10' },
+    { name: 'Algorithms', icon: FiCode, color: 'text-yellow-400', glow: 'shadow-yellow-400/50', border: 'group-hover:border-yellow-400/50', bg: 'bg-yellow-400/10' }
   ]
 };
 
@@ -210,4 +213,3 @@ const Skills = () => {
 };
 
 export default Skills;
-//done

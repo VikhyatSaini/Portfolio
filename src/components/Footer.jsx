@@ -27,7 +27,7 @@ const socialLinks = [
   },
   { 
     icon: <FiMail size={22} />, 
-    url: "mailto:sainivikhyat045@gmail.com", 
+    url: "mailto:sainivikhyat2003@gmail.com", 
     name: "Email",
     color: "from-[#10b981] to-teal-600",
     shadow: "shadow-emerald-500/30"
